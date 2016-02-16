@@ -9,12 +9,8 @@ class Game
 
   def play
     choices = ["rock", "paper", "scissors"]
-    # puts "Type 'quit' to quit."
-    # puts "Rock, paper or scissors?"
     user = choices.sample
-    # puts "You chose #{user}!"
     comp = choices.sample
-    # puts "The computer chose #{comp}!"
     data = []
     rock = "rock"
     paper = "paper"
