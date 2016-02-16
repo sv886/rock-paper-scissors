@@ -9,8 +9,8 @@ class Game
 
   def play
     choices = ["rock", "paper", "scissors"]
-    user = choices.sample
-    comp = choices.sample
+    player_one_choice = choices.sample
+    computer = choices.sample
     data = []
     rock = "rock"
     paper = "paper"
@@ -18,28 +18,28 @@ class Game
     tie = "tie"
     games_played = 0
     until games_played > 999
-      if user.downcase == "rock" && comp == "scissors"
+      if player_one_choice.downcase == "rock" && computer == "scissors"
         data << rock
-      elsif user.downcase == "rock" && comp == "paper"
+      elsif player_one_choice.downcase == "rock" && computer == "paper"
         data << paper
-      elsif user.downcase == "rock" && comp == "rock"
+      elsif player_one_choice.downcase == "rock" && computer == "rock"
         data << tie
-      elsif user.downcase == "scissors" && comp == "scissors"
+      elsif player_one_choice.downcase == "scissors" && computer == "scissors"
         data << tie
-      elsif user.downcase == "scissors" && comp == "paper"
+      elsif player_one_choice.downcase == "scissors" && computer == "paper"
         data << scissors
-      elsif user.downcase == "scissors" && comp == "rock"
+      elsif player_one_choice.downcase == "scissors" && computer == "rock"
         data << rock
-      elsif user.downcase == "paper" && comp == "scissors"
+      elsif player_one_choice.downcase == "paper" && computer == "scissors"
         data << scissors
-      elsif user.downcase == "paper" && comp == "paper"
+      elsif player_one_choice.downcase == "paper" && computer == "paper"
         data << tie
-      elsif user.downcase == "paper" && comp == "rock"
+      elsif player_one_choice.downcase == "paper" && computer == "rock"
         data << paper
       end
       games_played += 1
-      user = choices.sample
-      comp = choices.sample
+      player_one_choice = choices.sample
+      computer = choices.sample
     end
     breakdown = data.reduce(Hash.new(0)) { |a, b| a[b] += 1; a }
     puts "==========="
